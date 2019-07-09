@@ -19,8 +19,8 @@ public class RETC_45_copy extends config {
 		adminPOM.addnewvfunc();
 		adminPOM.titlefunc();
 		adminPOM.textareafunc();
-		adminPOM.checkboxfunc1();
-		adminPOM.checkboxfunc2();
+		//adminPOM.checkboxfunc1();
+		//adminPOM.checkboxfunc2();
 		adminPOM.regionpublishfunc();
 		adminPOM.viewmsgfunc();
 	}

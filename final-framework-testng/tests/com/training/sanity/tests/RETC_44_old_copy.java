@@ -2,7 +2,7 @@ package com.training.sanity.tests;
 
 import org.testng.annotations.Test;
 
-public class RETC_044 extends config{
+public class RETC_44_old_copy extends config{
 	@Test
 	public void RETC_045() throws InterruptedException
 	{
@@ -21,8 +21,6 @@ public class RETC_044 extends config{
 		//adminPOM.addnewvfunc();
 		adminPOM.featurenewvfunc();
 		adminPOM.featuretitlefunc();
-		String featureTitleCapture=adminPOM.getFeatureTitle();//creating object of AdminPOM.java that is adminPOM here and 
-		//then accessing return value of function of AdminPOM.java class
 		adminPOM.featureslugfunc();
 		adminPOM.featurtextareafunc();
 		adminPOM.addfeaturesubmitfunc();
@@ -30,10 +28,7 @@ public class RETC_044 extends config{
 		adminPOM.addnewvfunc();
 		adminPOM.titlefunc();
 		adminPOM.textareafunc();
-		Thread.sleep(3000);
-		//pass variable featureTitleCapture in checkboxfun1 below
-		adminPOM.checkboxfunc1(featureTitleCapture);
-		Thread.sleep(3000);
+		//adminPOM.checkboxfunc1();
 		//adminPOM.checkboxfunc2();
 		adminPOM.regionpublishfunc();
 		adminPOM.viewmsgfunc();

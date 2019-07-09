@@ -69,7 +69,7 @@ private WebDriver driver;
 	@FindBy(xpath="//input[@id='title']")//new title
 	private WebElement posttitlev;
 	
-	@FindBy(xpath="	//textarea[@id='content']")
+	@FindBy(xpath="//textarea[@id='content']")
 	private WebElement textareav;
 	
 
@@ -173,6 +173,12 @@ private WebDriver driver;
 	
 	@FindBy(xpath="//input[@id='tag-name']")//new title
 	private WebElement featuretagname;
+	
+	public String getFeatureTitle()
+	{
+		String featuretitle=this.featuretagname.getAttribute("value");
+		return featuretitle;
+	}
 	
 	@FindBy(xpath="//input[@id='tag-slug']")//new title
 	private WebElement featureslug;
@@ -436,9 +442,9 @@ private WebDriver driver;
 	
 	
 	
-	public void checkboxfunc1() throws InterruptedException//QUESTIONS FOR EVERY OPERATION LIKE CLICK LINK,CLICK LOGIN DO WE HAVE TO CREATE METHODS HERE
+	public void checkboxfunc1(String getfeaturetitle) throws InterruptedException//QUESTIONS FOR EVERY OPERATION LIKE CLICK LINK,CLICK LOGIN DO WE HAVE TO CREATE METHODS HERE
 	{
-		System.out.println("function is called");
+		System.out.println("now go outside of textboxarea function");
 		driver.switchTo().defaultContent();
 		
 		/*String regionxpathbefore="//*[contains(text(),' ";
@@ -453,14 +459,22 @@ private WebDriver driver;
 		//parentRegion
 		
 		
-		JavascriptExecutor js=(JavascriptExecutor)driver;
-		js.executeScript("window.scrollBy(0,300)");
+		//JavascriptExecutor js=(JavascriptExecutor)driver;
+		//js.executeScript("window.scrollBy(0,1000)");
+		
+		String getfeature=getfeaturetitle;
+				//label[text()=' s']
+		String beforeFeature="//label[text()=' ";
+		String afterFeature="']";
+		String fullfeaturepath=beforeFeature+getfeature+afterFeature;
+		
 		/*JavascriptExecutor js=(JavascriptExecutor)driver;
 		js.executeScript("window.scrollBy(0,300)");*/
 		//this.checkb1.click();
 		//driver.findElement(By.xpath(regionxpath)).click();
-		
-		driver.findElement(By.xpath(parentRegion())).click();//uncomment
+		WebElement featurepathelement=driver.findElement(By.xpath(fullfeaturepath));
+//js.executeScript("arguments[0].scrollIntoView();", featurepathelement);	
+		driver.findElement(By.xpath(fullfeaturepath)).click();//uncomment
 		}
 	//static String childRegion; //uncomment
 	public void checkboxfunc2() throws InterruptedException//QUESTIONS FOR EVERY OPERATION LIKE CLICK LINK,CLICK LOGIN DO WE HAVE TO CREATE METHODS HERE
@@ -469,8 +483,9 @@ private WebDriver driver;
 		//this.posttitlev.click();
 		Thread.sleep(6000);
 		JavascriptExecutor js=(JavascriptExecutor)driver;
-		js.executeScript("window.scrollBy(0,300)");
+		js.executeScript("window.scrollBy(0,1000)");
 		//this.checkb2.click();
+		
 		String childregionxpathbefore="//label[text()=' ";//from uncomment
 		String childregionxpathafter="']";
 		String child=regiontitle();
@@ -519,7 +534,7 @@ private WebDriver driver;
 	{
 		
 		Thread.sleep(3000);
-		this.featuretagname.sendKeys("Introduce new feature title");
+		this.featuretagname.sendKeys("A New Feature");
 	}
 	
 
@@ -536,7 +551,7 @@ private WebDriver driver;
 	{
 		
 		Thread.sleep(3000);
-		this.featurtextarea.sendKeys("Introduce new feature  textarea");
+		this.featurtextarea.sendKeys("Introduce new feature  textarea description");
 	}
 	
 	public void addfeaturesubmitfunc() throws InterruptedException//QUESTIONS FOR EVERY OPERATION LIKE CLICK LINK,CLICK LOGIN DO WE HAVE TO CREATE METHODS HERE
